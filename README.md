@@ -2,7 +2,7 @@
 Scripts em R para análise de dados e geração de gráficos à partir dos dados de https://covid.saude.gov.br/
 
 ## Origem dos dados
-Os dados são retirados do site [https://covid.saude.gov.br/](https://covid.saude.gov.br/), através de arquivo '.csv' disponibilizado diariamente.
+Os dados são retirados do site [https://covid.saude.gov.br/](https://covid.saude.gov.br/), através de arquivo '<.csv>' disponibilizado diariamente.
 Infelizmente atualmente somente as informações de casos acumulados e mortes são divulgadas periodicamente e de forma estruturada.
 Explicações detalhadas de cada campo podem ser obtidas no mesmo site, assim como a limitação dos mesmos.
 
@@ -14,5 +14,4 @@ Explicações detalhadas de cada campo podem ser obtidas no mesmo site, assim co
 ## Método de atualização
 1. Baixar arquivo '.csv'
 2. Atualizar script 'data import.R' para buscar último arquivo baixado
-3. Rodar demais scripts na seguinte orde:
-  1. 'data analysis.R'
+3. Rodar demais scripts
