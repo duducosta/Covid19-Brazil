@@ -1,0 +1,188 @@
+# 2 Data visualization and treatment
+# 2.1 Gráficos individuais por estado (# y=Casos totais, x=dias)
+  # SEM FILTRO / ESCALA CARTESIANA
+for(var in unique(df_estados$uf))
+{
+  p1 <- ggplot(data=df_estados[df_estados$uf == var,]) + 
+              geom_line(stat= "identity", 
+                       aes(x=datetime, y=cases))+
+              labs(title = paste("Casos totais no estado de",var, "por dia" ),
+                    subtitle = "",
+                    caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+              xlab("Days") + ylab("Casos totais") +
+              theme_light()
+  jpeg(paste(var,"-SemFiltro-Cartesiana.jpeg"), width=1000, height=800,)
+  print(p1)
+  dev.off() 
+}
+remove(var)
+
+# COM FILTRO / ESCALA CARTESIANA
+po <- 5     #Ordem do polinômio
+no <- 15    #Períodos ponderados
+for(var in unique(df_estados$uf))
+{
+  filteredVector <- signal::filter(filt= sgolay(p = po, n = no), df_estados[df_estados$uf == var,"cases"])
+  p3_data <- data.frame(filtered=filteredVector ,uf=rep(var, length(filteredVector)))
+  p3_data <- p3_data[(no+1):nrow(p3_data),] # excluindo as primeiras N observações (N = no)
+  p3 <- ggplot(data=p3_data) + 
+    geom_line(stat= "identity", 
+              aes(x=1:nrow(p3_data), y=filtered))+
+    labs(title = paste("Casos totais no estado de",var, "por dia, com filtro" ),
+         subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no),
+         caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+    xlab("Days") + ylab("Casos totais") +
+    theme_light()
+  jpeg(paste(var,"-ComFiltro-Cartesiana.jpeg"), width=1000, height=800,)
+  print(p3)
+  dev.off()
+  remove(filteredVector)
+  remove(p3)
+}
+
+# COM FILTRO / ESCALA LOG10
+
+## precisa fazer ##
+
+
+
+# SEM FILTRO / ESCALA CARTESIANA / COM ACELERAÇÃO
+# Calculada aceleração com base semanal 
+# Cores da colunas = aceleração
+# Base de cálculo são os dados após filtro, e não dados diretos
+for(var in unique(df_estados$uf))
+{
+  df_temp2 <- signal::filter(filt= sgolay(p = po, n = no), df_estados[df_estados$uf == var,"cases"])
+  length(df_temp2)
+  df_temp <- df_estados[df_estados$uf==var,]
+  df_temp$cases <- df_temp2
+  df_temp$datetime <-NULL
+  df_temp <- df_temp %>% group_by(uf, week) %>% summarise_all(max) %>% ungroup()
+  df_temp <- as.data.frame(df_temp)
+  df_temp$deltaCases <- rep(NA,nrow(df_temp))
+  df_temp$avgNewCasesDay <- rep(NA,nrow(df_temp)) #delta y do gráfico
+  df_temp <- df_temp %>% group_by(uf) %>% mutate(deltaCases = cases-lag(cases))
+  df_temp <- df_temp %>% mutate(avgNewCasesDay = round((deltaCases/7),1)) #(delta y(casos)/delta x(dias em uma semana)
+  df_temp$AccAngle <- round((df_temp$avgNewCasesDay * (180/pi)),0) %% 360 #converter para graus e trazer para 0-360
+  df_temp <- as.data.frame(df_temp)
+  df_temp$cases <- NULL
+  df_temp$deaths <- NULL
+  df_temp$deltaCases <- NULL
+  df_temp$avgNewCasesDay <- NULL
+  df_estados$AccAngle <- left_join(df_estados,df_temp,by=c("uf","week"))[,"AccAngle"]
+  df_estados[!weeks_complete[df_estados$week,"complete"],"AccAngle"] <-NA  #Desconsidera a semana corrente ainda não fechada
+  p1 <- ggplot(data=df_estados[df_estados$uf == var,]) + 
+    geom_col(aes(x=datetime, y=cases,fill=AccAngle))+
+    labs(title = paste("Casos totais no estado de",var, "por dia" ),
+         subtitle = "",
+         caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+    xlab("Days") + ylab("Casos totais") +
+    theme_light()+
+    scale_fill_continuous(low="yellow", high="darkred")
+  jpeg(paste(var,"-ColunasComAcc.jpeg"), width=1000, height=800,)
+  print(p1)
+  dev.off()
+  df_estados$AccAngle <-NULL
+  remove(df_temp, df_temp2)
+}
+
+
+
+# 2.2 Gráfico dos dados consolidado para o país (y=Casos totais, x=dias)
+# SEM FILTRO / ESCALA CARTESIANA
+p1_data <-  aggregate(df_estados$cases, by=list(datetime=df_estados$datetime),FUN=sum)
+p1 <- ggplot(data=p1_data) + 
+  geom_line(stat= "identity", 
+            aes(x=datetime, y=x))+
+  labs(title = paste("Casos totais no país por dia" ),
+       subtitle = "",
+       caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+  xlab("Days") + ylab("Casos totais") +
+  theme_light()
+jpeg("Brasil-SemFiltro-Cartesiana.jpeg")
+print(p1)
+dev.off() 
+remove(p1)
+
+# COM FILTRO / ESCALA CARTESIANA 
+# OBS: mesmo parâmetros para o filtro
+# estas próximas linhas fazem o subset e o filtro
+filteredVector <- signal::filter(filt= sgolay(p = po, n = no), p1_data$x)
+p3_data <- data.frame(filtered=filteredVector ,uf=rep("Brazil", length(filteredVector)))
+p3_data <- p3_data[(no+1):nrow(p3_data),] # excluindo as primeiras N observações (N = no)
+p3 <- ggplot(data=p3_data) + 
+  geom_line(stat= "identity", 
+            aes(x=1:nrow(p3_data), y=filtered))+
+  labs(title = paste("Casos totais no país por dia, com filtro" ),
+       subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no),
+       caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+  xlab("Days") + ylab("Casos totais") +
+  theme_light()
+jpeg("Brasil-ComFiltro-Cartesiana.jpeg")
+print(p3)
+dev.off() 
+remove(p3_data,p3)
+# COM FILTRO / ESCALA LOG10
+p3 <- ggplot(data=p3_data) + 
+  geom_line(stat= "identity", 
+            aes(x=1:nrow(p3_data), y=filtered))+
+  labs(title = paste("Casos totais no país por dia, com filtro" ),
+       subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no, "(escala Log10 em ambos eixos)"),
+       caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+  xlab("Days") + ylab("Casos totais") +
+  theme_light() +
+  scale_y_continuous(trans="log10")+
+  scale_x_continuous(trans="log10")
+jpeg("Brasil-ComFiltro-Logaritma.jpeg")
+print(p3)
+dev.off() 
+
+remove(var,po, no, p1_data, filteredVector)
+
+
+# SEM FILTRO / ESCALA CARTESIANA / COM ACELERAÇÃO
+# Calculada aceleração com base semanal 
+# Cores da colunas = aceleração
+# Base de cálculo são os dados após filtro, e não dados diretos
+        #### PRECISA CALCULAR ###
+
+
+# 2.3 Treemap com última posição de casos totais
+jpeg("Brasil-TreemapAtual.jpeg")
+p2_data <- df_estados[df_estados$datetime==max(df_estados$datetime),]
+p2_data$percentage <- round(p2_data$cases/sum(p2_data$cases)*100,1)
+p2 <- treemap(dtf = p2_data, 
+              index="uf",
+              vSize = "percentage",
+              type="manual",
+              vColor = "percentage",
+              mapping = c(min(p2_data$percentage),mean(p2_data$percentage),max(p2_data$percentage)),
+              palette = "YlOrRd",
+              border.col = "White",
+              overlap.labels = 0,
+              aspRatio = 1,
+              title= paste("Última proporção de casos totais - Atualizado:",last_update),
+              fontsize.title = 10,
+              title.legend= paste("Origem:",origem, "   -  Autor: Eduardo Costa"),
+              fontsize.legend = 8)
+p2_data$deaths <-NULL
+p2_data$datetime <-NULL
+p2_data$week <- NULL
+p2_data <- p2_data[order(-p2_data$percentage),]
+rownames(p2_data) <- 1:nrow(p2_data)
+dev.off() 
+remove(p2)
+
+jpeg("Brasil-TreemapAtual-Tab1.jpeg")
+grid.newpage()
+grid.table(p2_data[1:10,])
+dev.off() 
+jpeg("Brasil-TreemapAtual-Tab2.jpeg")
+grid.newpage()
+grid.table(p2_data[11:20,])
+dev.off() 
+jpeg("Brasil-TreemapAtual-Tab3.jpeg")
+grid.newpage()
+grid.table(p2_data[21:27,])
+dev.off() 
+remove(p2_data)
