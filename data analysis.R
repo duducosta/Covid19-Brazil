@@ -1,3 +1,4 @@
+
 # 2 Data visualization and treatment
 # 2.1 Gráficos individuais por estado (# y=Casos totais, x=dias)
   # SEM FILTRO / ESCALA CARTESIANA
@@ -5,13 +6,14 @@ for(var in unique(df_estados$uf))
 {
   p1 <- ggplot(data=df_estados[df_estados$uf == var,]) + 
               geom_line(stat= "identity", 
-                       aes(x=datetime, y=cases))+
+                       aes(x=datetime, y=cases), size=2, colour="blue")+
               labs(title = paste("Casos totais no estado de",var, "por dia" ),
                     subtitle = "",
                     caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
               xlab("Days") + ylab("Casos totais") +
               theme_light()
-  jpeg(paste(var,"-SemFiltro-Cartesiana.jpeg"), width=1000, height=800,)
+  file <- file.path("D:","Projects","Data Analysis","Covid19 - Brazil",last_update,paste(var,"-SemFiltro-Cartesiana.jpeg"))
+  jpeg(file=file, width=1000, height=800)
   print(p1)
   dev.off() 
 }
@@ -27,13 +29,14 @@ for(var in unique(df_estados$uf))
   p3_data <- p3_data[(no+1):nrow(p3_data),] # excluindo as primeiras N observações (N = no)
   p3 <- ggplot(data=p3_data) + 
     geom_line(stat= "identity", 
-              aes(x=1:nrow(p3_data), y=filtered))+
+              aes(x=1:nrow(p3_data), y=filtered), size=2, colour="blue")+
     labs(title = paste("Casos totais no estado de",var, "por dia, com filtro" ),
          subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no),
          caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
     xlab("Days") + ylab("Casos totais") +
     theme_light()
-  jpeg(paste(var,"-ComFiltro-Cartesiana.jpeg"), width=1000, height=800,)
+  file <- file.path("D:","Projects","Data Analysis","Covid19 - Brazil",last_update,paste(var,"-ComFiltro-Cartesiana.jpeg"))
+  jpeg(file=file, width=1000, height=800)
   print(p3)
   dev.off()
   remove(filteredVector)
@@ -62,8 +65,8 @@ for(var in unique(df_estados$uf))
   df_temp$deltaCases <- rep(NA,nrow(df_temp))
   df_temp$avgNewCasesDay <- rep(NA,nrow(df_temp)) #delta y do gráfico
   df_temp <- df_temp %>% group_by(uf) %>% mutate(deltaCases = cases-lag(cases))
-  df_temp <- df_temp %>% mutate(avgNewCasesDay = round((deltaCases/7),1)) #(delta y(casos)/delta x(dias em uma semana)
-  df_temp$AccAngle <- round((df_temp$avgNewCasesDay * (180/pi)),0) %% 360 #converter para graus e trazer para 0-360
+  df_temp <- df_temp %>% mutate(avgNewCasesDay = (deltaCases/7)) #(delta y(casos)/delta x(dias em uma semana)
+  df_temp$AccAngle <- (atan(df_temp$avgNewCasesDay) * (180/pi)) #converter para graus e trazer para 0-360
   df_temp <- as.data.frame(df_temp)
   df_temp$cases <- NULL
   df_temp$deaths <- NULL
@@ -79,13 +82,14 @@ for(var in unique(df_estados$uf))
     xlab("Days") + ylab("Casos totais") +
     theme_light()+
     scale_fill_continuous(low="yellow", high="darkred")
-  jpeg(paste(var,"-ColunasComAcc.jpeg"), width=1000, height=800,)
+  file <- file.path("D:","Projects","Data Analysis","Covid19 - Brazil",last_update,paste(var,"-ColunasComAcc.jpeg"))
+  jpeg(file=file, width=1000, height=800)
   print(p1)
   dev.off()
   df_estados$AccAngle <-NULL
   remove(df_temp, df_temp2)
 }
-
+df_estados[df_estados$uf == "SP",]
 
 
 # 2.2 Gráfico dos dados consolidado para o país (y=Casos totais, x=dias)
@@ -93,13 +97,14 @@ for(var in unique(df_estados$uf))
 p1_data <-  aggregate(df_estados$cases, by=list(datetime=df_estados$datetime),FUN=sum)
 p1 <- ggplot(data=p1_data) + 
   geom_line(stat= "identity", 
-            aes(x=datetime, y=x))+
+            aes(x=datetime, y=x), size=2, colour="blue")+
   labs(title = paste("Casos totais no país por dia" ),
        subtitle = "",
        caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
   xlab("Days") + ylab("Casos totais") +
   theme_light()
-jpeg("Brasil-SemFiltro-Cartesiana.jpeg")
+file <- file.path("D:","Projects","Data Analysis","Covid19 - Brazil",last_update,paste(var,"Brasil-SemFiltro-Cartesiana.jpeg"))
+jpeg(file=file, width=1000, height=800)
 print(p1)
 dev.off() 
 remove(p1)
@@ -112,20 +117,22 @@ p3_data <- data.frame(filtered=filteredVector ,uf=rep("Brazil", length(filteredV
 p3_data <- p3_data[(no+1):nrow(p3_data),] # excluindo as primeiras N observações (N = no)
 p3 <- ggplot(data=p3_data) + 
   geom_line(stat= "identity", 
-            aes(x=1:nrow(p3_data), y=filtered))+
+            aes(x=1:nrow(p3_data), y=filtered), size=2, colour="blue")+
   labs(title = paste("Casos totais no país por dia, com filtro" ),
        subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no),
        caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
   xlab("Days") + ylab("Casos totais") +
   theme_light()
-jpeg("Brasil-ComFiltro-Cartesiana.jpeg")
+file <- file.path("D:","Projects","Data Analysis","Covid19 - Brazil",last_update,paste(var,"Brasil-ComFiltro-Cartesiana.jpeg"))
+jpeg(file=file, width=1000, height=800)
 print(p3)
 dev.off() 
-remove(p3_data,p3)
+remove(p3)
+
 # COM FILTRO / ESCALA LOG10
 p3 <- ggplot(data=p3_data) + 
   geom_line(stat= "identity", 
-            aes(x=1:nrow(p3_data), y=filtered))+
+            aes(x=1:nrow(p3_data), y=filtered), size=2, colour="blue")+
   labs(title = paste("Casos totais no país por dia, com filtro" ),
        subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no, "(escala Log10 em ambos eixos)"),
        caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
@@ -133,7 +140,8 @@ p3 <- ggplot(data=p3_data) +
   theme_light() +
   scale_y_continuous(trans="log10")+
   scale_x_continuous(trans="log10")
-jpeg("Brasil-ComFiltro-Logaritma.jpeg")
+file <- file.path("D:","Projects","Data Analysis","Covid19 - Brazil",last_update,paste(var,"Brasil-ComFiltro-Logaritma.jpeg"))
+jpeg(file=file, width=1000, height=800)
 print(p3)
 dev.off() 
 
@@ -172,8 +180,8 @@ p2_data <- p2_data[order(-p2_data$percentage),]
 rownames(p2_data) <- 1:nrow(p2_data)
 dev.off() 
 remove(p2)
-
-jpeg("Brasil-TreemapAtual-Tab1.jpeg")
+file <- file.path("D:","Projects","Data Analysis","Covid19 - Brazil",last_update,paste(var,"Brasil-TreemapAtual-Tab1.jpeg"))
+jpeg(file=file, width=1000, height=800)
 grid.newpage()
 grid.table(p2_data[1:10,])
 dev.off() 
@@ -185,4 +193,4 @@ jpeg("Brasil-TreemapAtual-Tab3.jpeg")
 grid.newpage()
 grid.table(p2_data[21:27,])
 dev.off() 
-remove(p2_data)
+remove(p2_data,p3,p3_data)

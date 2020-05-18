@@ -20,7 +20,7 @@ options(scipen=999)
 # 1 Importação dos dados
 # Arquivo .csv do site: https://covid.saude.gov.br/
 #importação
-MyData <- read.csv("HIST_PAINEL_COVIDBR_20200515.csv", sep = ";")
+MyData <- read.csv("db\\HIST_PAINEL_COVIDBR_20200517.csv", sep = ";")
 colnames(MyData) <- c("regiao","estado","municipio","coduf","codmun","codRegiaoSaude","nomeRegiaoSaude","data","semanaEpi","populacaoTCU2019","casosAcumulado","obitosAcumulado","Recuperadosnovos","emAcompanhamentoNovos")
 #atribuição de fatores e formatos
 MyData[MyData==""] <- NA
@@ -43,3 +43,5 @@ remove(df_temp)
 # Importação do controle de semana completas
 weeks_complete <-read.csv("week_complete.csv", sep = ";")
 
+# Criação do folder para os gráficos desta atualização
+dir.create(paste(last_update))
