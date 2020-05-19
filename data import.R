@@ -43,5 +43,4 @@ remove(df_temp)
 # Importação do controle de semana completas
 weeks_complete <-read.csv("week_complete.csv", sep = ";")
 
-# Criação do folder para os gráficos desta atualização
-dir.create(paste(last_update))
+
