@@ -18,137 +18,137 @@ Nota: Dadas as unidades dos gráficos, os mesmos não se encontram em escala, e 
 Estados em ordem alfabética.  
 Pode ser usado a busca do navegador para facilitar.  
 
-__Casostotais-AC__
+__Casos totais-AC__
 
 ![](/TC/AC-TC-Completo.jpeg)
 ![](/TC/AC-Vel_semanal.jpeg)
 
-__Casostotais-AL__
+__Casos totais-AL__
 
 ![](/TC/AL-TC-Completo.jpeg)
 ![](/TC/AL-Vel_semanal.jpeg)
 
-__Casostotais-AM__
+__Casos totais-AM__
 
 ![](/TC/AM-TC-Completo.jpeg)
 ![](/TC/AM-Vel_semanal.jpeg)
 
-__Casostotais-AP__
+__Casos totais-AP__
 
 ![](/TC/AP-TC-Completo.jpeg)
 ![](/TC/AP-Vel_semanal.jpeg)
 
-__Casostotais-BA__
+__Casos totais-BA__
 
 ![](/TC/BA-TC-Completo.jpeg)
 ![](/TC/BA-Vel_semanal.jpeg)
 
-__Casostotais-CE__
+__Casos totais-CE__
 
 ![](/TC/CE-TC-Completo.jpeg)
 ![](/TC/CE-Vel_semanal.jpeg)
 
-__Casostotais-DF__
+__Casos totais-DF__
 
 ![](/TC/DF-TC-Completo.jpeg)
 ![](/TC/DF-Vel_semanal.jpeg)
 
-__Casostotais-ES__
+__Casos totais-ES__
 
 ![](/TC/ES-TC-Completo.jpeg)
 ![](/TC/ES-Vel_semanal.jpeg)
 
-__Casostotais-GO__
+__Casos totais-GO__
 
 ![](/TC/GO-TC-Completo.jpeg)
 ![](/TC/GO-Vel_semanal.jpeg)
 
-__Casostotais-MA__
+__Casos totais-MA__
 
 ![](/TC/MA-TC-Completo.jpeg)
 ![](/TC/MA-Vel_semanal.jpeg)
 
-__Casostotais-MG__
+__Casos totais-MG__
 
 ![](/TC/MG-TC-Completo.jpeg)
 ![](/TC/MG-Vel_semanal.jpeg)
 
-__Casostotais-MS__
+__Casos totais-MS__
 
 ![](/TC/MS-TC-Completo.jpeg)
 ![](/TC/MS-Vel_semanal.jpeg)
 
-__Casostotais-MT__
+__Casos totais-MT__
 
 ![](/TC/MT-TC-Completo.jpeg)
 ![](/TC/MT-Vel_semanal.jpeg)
 
-__Casostotais-PA__
+__Casos totais-PA__
 
 ![](/TC/PA-TC-Completo.jpeg)
 ![](/TC/PA-Vel_semanal.jpeg)
 
-__Casostotais-PB__
+__Casos totais-PB__
 
 ![](/TC/PB-TC-Completo.jpeg)
 ![](/TC/PB-Vel_semanal.jpeg)
 
-__Casostotais-PE__
+__Casos totais-PE__
 
 ![](/TC/PE-TC-Completo.jpeg)
 ![](/TC/PE-Vel_semanal.jpeg)
 
-__Casostotais-PI__
+__Casos totais-PI__
 
 ![](/TC/PI-TC-Completo.jpeg)
 ![](/TC/PI-Vel_semanal.jpeg)
 
-__Casostotais-PR__
+__Casos totais-PR__
 
 ![](/TC/PR-TC-Completo.jpeg)
 ![](/TC/PR-Vel_semanal.jpeg)
 
-__Casostotais-RJ__
+__Casos totais-RJ__
 
 ![](/TC/RJ-TC-Completo.jpeg)
 ![](/TC/RJ-Vel_semanal.jpeg)
 
-__Casostotais-RN__
+__Casos totais-RN__
 
 ![](/TC/RN-TC-Completo.jpeg)
 ![](/TC/RN-Vel_semanal.jpeg)
 
-__Casostotais-RO__
+__Casos totais-RO__
 
 ![](/TC/RO-TC-Completo.jpeg)
 ![](/TC/RO-Vel_semanal.jpeg)
 
-__Casostotais-RR__
+__Casos totais-RR__
 
 ![](/TC/RR-TC-Completo.jpeg)
 ![](/TC/RR-Vel_semanal.jpeg)
 
-__Casostotais-RS__
+__Casos totais-RS__
 
 ![](/TC/RS-TC-Completo.jpeg)
 ![](/TC/RS-Vel_semanal.jpeg)
 
-__Casostotais-SC__
+__Casos totais-SC__
 
 ![](/TC/SC-TC-Completo.jpeg)
 ![](/TC/SC-Vel_semanal.jpeg)
 
-__Casostotais-SE__
+__Casos totais-SE__
 
 ![](/TC/SE-TC-Completo.jpeg)
 ![](/TC/SE-Vel_semanal.jpeg)
 
-__Casostotais-SP__
+__Casos totais-SP__
 
 ![](/TC/SP-TC-Completo.jpeg)
 ![](/TC/SP-Vel_semanal.jpeg)
 
-__Casostotais-TO__
+__Casos totais-TO__
 
 ![](/TC/TO-TC-Completo.jpeg)
 ![](/TC/TO-Vel_semanal.jpeg)
