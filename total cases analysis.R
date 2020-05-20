@@ -74,7 +74,7 @@ for(var in unique(df_estados$uf))
   # imprimir tabela
   d <- df_temp
   tt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))
-  colnames(d) <- c("Estado", "Semana epidem.", "Casos totais", "Aumento de casos da semana", "Média de aumento por dia (/1000)", "Velocidade do aumento")
+  colnames(d) <- c("Estado", "Semana epidem.", "Casos totais", "Aumento de casos da semana", "Média de aumento por dia (/100)", "Velocidade do aumento")
   jpeg((paste(var,"-Vel_semanal.jpeg",sep="")), width= g_width, height= g_height)
   grid.newpage()
   grid.table(d)
