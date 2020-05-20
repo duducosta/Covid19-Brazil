@@ -6,13 +6,16 @@ Os dados são retirados do site [https://covid.saude.gov.br/](https://covid.saud
 Infelizmente atualmente somente as informações de casos acumulados e mortes são divulgadas periodicamente e de forma estruturada.  
 Explicações detalhadas de cada campo podem ser obtidas no mesmo site, assim como a limitação dos mesmos.
 
-# Gráficos
-Estes gráficos são feitos a partirs dos dados fornecidos pelo ministério da saúde.  
+# Gráficos e tabelas
+Estas figuras são feitas a partirs dos dados fornecidos pelo ministério da saúde.  
 A linha é a evolução dos casos com base diária, ou no intervalo de tempo entre disponibilização dos arquivos.  
 As colunas são coloridas com base na INCLINAÇÃO da reta tangente à curva do gráfico, com base semanal e após tratar os dados por um filtro de Savitzky-Golay, usando-se o [pacote signal](https://cran.r-project.org/web/packages/signal/signal.pdf) com o método `sgolay` com parâmetros: n=15 e p=5.  
 Ou seja: Quando mais escura a cor das colunas, mais rápido estão se multiplicando os casos.  
 
 Nota: Dadas as unidades dos gráficos, os mesmos não se encontram em escala, e para o cálculo da inclinação da reta tangente foi usado um fator na escala do gráfico para que os resultados sejam mais sensíveis.
+
+## Tabela com resumo atual
+![](/TC/0Brasil-TC-Tabela.jpeg)
 
 ## Gráficos no nível dos estados
 Estados em ordem alfabética.  
