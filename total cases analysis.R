@@ -127,7 +127,7 @@ p1 <- ggplot(data=p1_data) +
         axis.text = element_text(face="bold",size=15),
         plot.title = element_text(lineheight = 0.8,face="bold",size=30),
         plot.caption = element_text(lineheight = 0.8,size=15))
-jpeg(paste(var,"Brasil-TC-Basico.jpeg"), width= g_width, height= g_height)
+jpeg("0 Brasil-TC-Basico.jpeg") width= g_width, height= g_height)
 print(p1)
 dev.off() 
 remove(p1)
@@ -150,7 +150,7 @@ p3 <- ggplot(data=p3_data) +
         axis.text = element_text(face="bold",size=15),
         plot.title = element_text(lineheight = 0.8,face="bold",size=30),
         plot.caption = element_text(lineheight = 0.8,size=15))
-jpeg(paste(var,"Brasil-TC-ComFiltro.jpeg"), width= g_width, height= g_height)
+jpeg("0 Brasil-TC-ComFiltro.jpeg", width= g_width, height= g_height)
 print(p3)
 dev.off() 
 remove(p3)
@@ -166,7 +166,7 @@ remove(var,po, no, p1_data, filteredVector)
 
 
 # 2.3 Treemap com última posição de casos totais
-jpeg("Brasil-TC-Treemap.jpeg", width=1000, height=800)
+jpeg("0 Brasil-TC-Treemap.jpeg", width=1000, height=800)
 p2_data <- df_estados[df_estados$datetime==max(df_estados$datetime),]
 p2_data$percentage <- round(p2_data$cases/sum(p2_data$cases)*100,1)
 p2 <- treemap(dtf = p2_data, 
@@ -193,21 +193,21 @@ remove(p2)
 
 tt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))
 colnames(p2_data) <- c("Estado", "Casos totais", "Percentual")
-jpeg("Brasil-TC-Treemap-Tab1.jpeg", width= g_width, height= g_height)
+jpeg("0 Brasil-TC-Treemap-Tab1.jpeg", width= g_width, height= g_height)
 grid.newpage()
 grid.table(p2_data[1:10,])
 dev.off() 
-jpeg("Brasil-TC-Treemap-Tab2.jpeg", width= g_width, height= g_height)
+jpeg("0 Brasil-TC-Treemap-Tab2.jpeg", width= g_width, height= g_height)
 grid.newpage()
 grid.table(p2_data[11:20,])
 dev.off() 
-jpeg("Brasil-TC-Treemap-Tab3.jpeg", width= g_width, height= g_height)
+jpeg("0 Brasil-TC-Treemap-Tab3.jpeg", width= g_width, height= g_height)
 grid.newpage()
 grid.table(p2_data[21:27,])
 dev.off() 
 remove(p2_data,p3_data,tt)
 
 
-### FINAL DO ARQUIVO
+### FINAL DO ARQUIVO DE TOTAL CASES
 setwd("D:\\Projects\\Data Analysis\\Covid19 - Brazil")
-print("----------------------------")
+print("----------------FINAL DO ARQUIVO DE TOTAL CASES------------------")

@@ -43,4 +43,6 @@ remove(df_temp)
 # Importação do controle de semana completas
 weeks_complete <-read.csv("week_complete.csv", sep = ";")
 
-
+### FINAL DO ARQUIVO DE IMPORTAÇÃO
+setwd("D:\\Projects\\Data Analysis\\Covid19 - Brazil")
+print("----------------FINAL DO ARQUIVO DE IMPORTAÇÃO------------------")
