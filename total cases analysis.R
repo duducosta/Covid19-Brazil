@@ -166,46 +166,29 @@ remove(var,po, no, p1_data, filteredVector)
 
 
 # 2.3 Treemap com última posição de casos totais
-jpeg("0Brasil-TC-Treemap.jpeg", width=1000, height=800)
+
 p2_data <- df_estados[df_estados$datetime==max(df_estados$datetime),]
 p2_data$percentage <- round(p2_data$cases/sum(p2_data$cases)*100,1)
-p2 <- treemap(dtf = p2_data, 
-              index="uf",
-              vSize = "percentage",
-              type="manual",
-              vColor = "percentage",
-              mapping = c(min(p2_data$percentage),mean(p2_data$percentage),max(p2_data$percentage)),
-              palette = "YlOrRd",
-              border.col = "White",
-              overlap.labels = 0,
-              aspRatio = 1,
-              title= paste("Última proporção de casos totais - Atualizado:",last_update),
-              fontsize.title = 10,
-              title.legend= paste("Origem:",origem, "   -  Autor: Eduardo Costa - duducosta.github.io/Covid19-Brazil/"),
-              fontsize.legend = 8)
 p2_data$deaths <-NULL
 p2_data$datetime <-NULL
 p2_data$week <- NULL
 p2_data <- p2_data[order(-p2_data$percentage),]
 rownames(p2_data) <- 1:nrow(p2_data)
-dev.off() 
-remove(p2)
-
+p2_data_temp <- data.frame("Brasil", sum(p2_data$cases), round(sum(p2_data$percentage),0))
+names(p2_data_temp) <- colnames(p2_data)
+p2_data <- rbind(p2_data,p2_data_temp)
 tt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))
+p2_data$cases <-format(p2_data$cases, decimal.mark = ",", big.mark = ".")
+p2_data$percentage <-format(p2_data$percentage, decimal.mark = ",", big.mark = ".")
 colnames(p2_data) <- c("Estado", "Casos totais", "Percentual")
-jpeg("0Brasil-TC-Treemap-Tab1.jpeg", width= g_width, height= g_height)
+jpeg("0Brasil-TC-Tabela.jpeg", width= 250, height= 700)
 grid.newpage()
-grid.table(p2_data[1:10,])
-dev.off() 
-jpeg("0Brasil-TC-Treemap-Tab2.jpeg", width= g_width, height= g_height)
-grid.newpage()
-grid.table(p2_data[11:20,])
-dev.off() 
-jpeg("0Brasil-TC-Treemap-Tab3.jpeg", width= g_width, height= g_height)
-grid.newpage()
-grid.table(p2_data[21:27,])
+grid.table(p2_data[,])
 dev.off() 
 remove(p2_data,p3_data,tt)
+
+
+
 
 
 ### FINAL DO ARQUIVO DE TOTAL CASES
