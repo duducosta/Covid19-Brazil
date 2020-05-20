@@ -14,6 +14,9 @@ Ou seja: Quando mais escura a cor das colunas, mais rápido estão se multiplica
 Nota: Dadas as unidades dos gráficos, os mesmos não se encontram em escala, e para o cálculo da inclinação da reta tangente foi usado um fator na escala do gráfico para que os resultados sejam mais sensíveis.
 
 ## Gráficos no nível dos estados
+Estados em ordem alfabética. 
+POde ser usado a busca do navegador para facilitar.
+
 __* Casos totais - AC__
 <p align="center"><img width="500" height="500" src="https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC -TC-Completo.jpeg"></p>
 <p align="center"><img width="500" height="500" src="https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC -Vel_semanal.jpeg"></p>
