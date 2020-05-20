@@ -1,4 +1,4 @@
-setwd(file.path("D:","Projects","Data Analysis","Covid19 - Brazil","graph"))
+setwd(file.path("D:","Projects","Data Analysis","Covid19 - Brazil","TC"))
 getwd()
 g_width = 800
 g_height = 800
@@ -12,14 +12,14 @@ for(var in unique(df_estados$uf))
                        aes(x=datetime, y=cases), size=2, colour="blue")+
               labs(title = paste("Casos totais no estado de",var, "por dia" ),
                     subtitle = "",
-                    caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+                    caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa - duducosta.github.io/Covid19-Brazil/"))+
               xlab("Days") + ylab("Casos totais") +
               theme_light()+
               theme(axis.title = element_text(face="bold",colour="red",size=20),
                       axis.text = element_text(face="bold",size=15),
                     plot.title = element_text(lineheight = 0.8,face="bold",size=30),
                     plot.caption = element_text(lineheight = 0.8,size=15))
-  jpeg(paste(var,"-SemFiltro-Cartesiana.jpeg"), width= g_width, height= g_height)
+  jpeg(paste(var,"-TC-Basico.jpeg"), width= g_width, height= g_height)
   print(p1)
   dev.off() 
 }
@@ -38,25 +38,19 @@ for(var in unique(df_estados$uf))
               aes(x=1:nrow(p3_data), y=filtered), size=2, colour="blue")+
     labs(title = paste("Casos totais no estado de",var, "por dia, com filtro" ),
          subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no),
-         caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+         caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa - duducosta.github.io/Covid19-Brazil/"))+
     xlab("Days") + ylab("Casos totais") +
     theme_light()+
     theme(axis.title = element_text(face="bold",colour="red",size=20),
           axis.text = element_text(face="bold",size=15),
           plot.title = element_text(lineheight = 0.8,face="bold",size=30),
           plot.caption = element_text(lineheight = 0.8,size=15))
-  jpeg(paste(var,"-ComFiltro-Cartesiana.jpeg"), width= g_width, height= g_height)
+  jpeg(paste(var,"-TC-Filtro.jpeg"), width= g_width, height= g_height)
   print(p3)
   dev.off()
   remove(filteredVector)
   remove(p3)
 }
-
-# COM FILTRO / ESCALA LOG10
-
-## precisa fazer ##
-
-
 
 # SEM FILTRO / ESCALA CARTESIANA / COM ACELERAÇÃO
 # Calculada aceleração com base semanal 
@@ -98,7 +92,7 @@ for(var in unique(df_estados$uf))
               aes(x=datetime, y=cases), size=2.5, colour="green")+
     labs(title = paste("Casos totais no estado de",var, "por dia" ),
          subtitle = "",
-         caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"),
+         caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa - duducosta.github.io/Covid19-Brazil/"),
          fill="Velocidade de crescimento \n (graus tan)")+
     xlab("Days") + ylab("Casos totais") +
     theme_light()+
@@ -110,7 +104,7 @@ for(var in unique(df_estados$uf))
           legend.text = element_text(size=15,face="bold"),
           legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"),
           legend.position = "bottom")
-  jpeg(paste(var,"-ColunasComVel.jpeg"), width= g_width, height= g_height)
+  jpeg(paste(var,"-TC-Completo.jpeg"), width= g_width, height= g_height)
   print(p1)
   dev.off()
   df_estados$TanAngle <-NULL
@@ -126,14 +120,14 @@ p1 <- ggplot(data=p1_data) +
             aes(x=datetime, y=x), size=2, colour="blue")+
   labs(title = paste("Casos totais no país por dia" ),
        subtitle = "",
-       caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+       caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa - duducosta.github.io/Covid19-Brazil/"))+
   xlab("Days") + ylab("Casos totais") +
   theme_light()+
   theme(axis.title = element_text(face="bold",colour="red",size=20),
         axis.text = element_text(face="bold",size=15),
         plot.title = element_text(lineheight = 0.8,face="bold",size=30),
         plot.caption = element_text(lineheight = 0.8,size=15))
-jpeg(paste(var,"Brasil-SemFiltro-Cartesiana.jpeg"), width= g_width, height= g_height)
+jpeg(paste(var,"Brasil-TC-Basico.jpeg"), width= g_width, height= g_height)
 print(p1)
 dev.off() 
 remove(p1)
@@ -149,36 +143,17 @@ p3 <- ggplot(data=p3_data) +
             aes(x=1:nrow(p3_data), y=filtered), size=2, colour="blue")+
   labs(title = paste("Casos totais no país por dia, com filtro" ),
        subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no),
-       caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
+       caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa - duducosta.github.io/Covid19-Brazil/"))+
   xlab("Days") + ylab("Casos totais") +
   theme_light()+
   theme(axis.title = element_text(face="bold",colour="red",size=20),
         axis.text = element_text(face="bold",size=15),
         plot.title = element_text(lineheight = 0.8,face="bold",size=30),
         plot.caption = element_text(lineheight = 0.8,size=15))
-jpeg(paste(var,"Brasil-ComFiltro-Cartesiana.jpeg"), width= g_width, height= g_height)
+jpeg(paste(var,"Brasil-TC-ComFiltro.jpeg"), width= g_width, height= g_height)
 print(p3)
 dev.off() 
 remove(p3)
-
-# COM FILTRO / ESCALA LOG10
-p3 <- ggplot(data=p3_data) + 
-  geom_line(stat= "identity", 
-            aes(x=1:nrow(p3_data), y=filtered), size=2, colour="blue")+
-  labs(title = paste("Casos totais no país por dia, com filtro" ),
-       subtitle = paste("Savitzky-Golay:", "p=",po,"n=",no, "(escala Log10 em ambos eixos)"),
-       caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa"))+
-  xlab("Days") + ylab("Casos totais") +
-  theme_light() +
-  scale_y_continuous(trans="log10")+
-  scale_x_continuous(trans="log10")+
-  theme(axis.title = element_text(face="bold",colour="red",size=20),
-        axis.text = element_text(face="bold",size=15),
-        plot.title = element_text(lineheight = 0.8,face="bold",size=30),
-        plot.caption = element_text(lineheight = 0.8,size=15))
-jpeg(paste(var,"Brasil-ComFiltro-Logaritma.jpeg"), width= g_width, height= g_height)
-print(p3)
-dev.off() 
 
 remove(var,po, no, p1_data, filteredVector)
 
@@ -191,7 +166,7 @@ remove(var,po, no, p1_data, filteredVector)
 
 
 # 2.3 Treemap com última posição de casos totais
-jpeg("Brasil-TreemapAtual.jpeg", width=1000, height=800)
+jpeg("Brasil-TC-Treemap.jpeg", width=1000, height=800)
 p2_data <- df_estados[df_estados$datetime==max(df_estados$datetime),]
 p2_data$percentage <- round(p2_data$cases/sum(p2_data$cases)*100,1)
 p2 <- treemap(dtf = p2_data, 
@@ -206,7 +181,7 @@ p2 <- treemap(dtf = p2_data,
               aspRatio = 1,
               title= paste("Última proporção de casos totais - Atualizado:",last_update),
               fontsize.title = 10,
-              title.legend= paste("Origem:",origem, "   -  Autor: Eduardo Costa"),
+              title.legend= paste("Origem:",origem, "   -  Autor: Eduardo Costa - duducosta.github.io/Covid19-Brazil/"),
               fontsize.legend = 8)
 p2_data$deaths <-NULL
 p2_data$datetime <-NULL
@@ -218,19 +193,19 @@ remove(p2)
 
 tt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))
 colnames(p2_data) <- c("Estado", "Casos totais", "Percentual")
-jpeg("Brasil-TreemapAtual-Tab1.jpeg", width= g_width, height= g_height)
+jpeg("Brasil-TC-Treemap-Tab1.jpeg", width= g_width, height= g_height)
 grid.newpage()
 grid.table(p2_data[1:10,])
 dev.off() 
-jpeg("Brasil-TreemapAtual-Tab2.jpeg", width= g_width, height= g_height)
+jpeg("Brasil-TC-Treemap-Tab2.jpeg", width= g_width, height= g_height)
 grid.newpage()
 grid.table(p2_data[11:20,])
 dev.off() 
-jpeg("Brasil-TreemapAtual-Tab3.jpeg", width= g_width, height= g_height)
+jpeg("Brasil-TC-Treemap-Tab3.jpeg", width= g_width, height= g_height)
 grid.newpage()
 grid.table(p2_data[21:27,])
 dev.off() 
-remove(p2_data,p3,p3_data)
+remove(p2_data,p3_data,tt)
 
 
 ### FINAL DO ARQUIVO
