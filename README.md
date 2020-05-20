@@ -20,138 +20,139 @@ Pode ser usado a busca do navegador para facilitar.
 
 __Casostotais-AC__
 
-![Casostotais-AC](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC-TC-Completo.jpeg)
-![Casostotais-AC-tab](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC-Vel_semanal.jpeg)
+![](/TC/AC-TC-Completo.jpeg)
+![](/TC/AC-Vel_semanal.jpeg)
 
 __Casostotais-AL__
 
-![Casostotais-AL](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AL-TC-Completo.jpeg)
-![Casostotais-AL](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AL-Vel_semanal.jpeg)
+![](/TC/AL-TC-Completo.jpeg)
+![](/TC/AL-Vel_semanal.jpeg)
 
 __Casostotais-AM__
 
 ![](/TC/AM-TC-Completo.jpeg)
-![](TC/AM-Vel_semanal.jpeg)
+![](/TC/AM-Vel_semanal.jpeg)
 
 __Casostotais-AP__
 
-![Casostotais-AP](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AP-TC-Completo.jpeg)
-![Casostotais-AP](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AP-Vel_semanal.jpeg)
+![](/TC/AP-TC-Completo.jpeg)
+![](/TC/AP-Vel_semanal.jpeg)
 
 __Casostotais-BA__
 
-![Casostotais-BA](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/BA-TC-Completo.jpeg)
-![Casostotais-BA](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/BA-Vel_semanal.jpeg)
+![](/TC/BA-TC-Completo.jpeg)
+![](/TC/BA-Vel_semanal.jpeg)
 
 __Casostotais-CE__
 
-![Casostotais-CE](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/CE-TC-Completo.jpeg)
-![Casostotais-CE](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/CE-Vel_semanal.jpeg)
+![](/TC/CE-TC-Completo.jpeg)
+![](/TC/CE-Vel_semanal.jpeg)
 
 __Casostotais-DF__
 
-![Casostotais-DF](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/DF-TC-Completo.jpeg)
-![Casostotais-DF](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/DF-Vel_semanal.jpeg)
+![](/TC/DF-TC-Completo.jpeg)
+![](/TC/DF-Vel_semanal.jpeg)
 
 __Casostotais-ES__
 
-![Casostotais-ES](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/ES-TC-Completo.jpeg)
-![Casostotais-ES](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/ES-Vel_semanal.jpeg)
+![](/TC/ES-TC-Completo.jpeg)
+![](/TC/ES-Vel_semanal.jpeg)
 
 __Casostotais-GO__
 
-![Casostotais-GO](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/GO-TC-Completo.jpeg)
-![Casostotais-GO](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/GO-Vel_semanal.jpeg)
+![](/TC/GO-TC-Completo.jpeg)
+![](/TC/GO-Vel_semanal.jpeg)
 
 __Casostotais-MA__
 
-![Casostotais-MA](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/MA-TC-Completo.jpeg)
-![Casostotais-MA](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/MA-Vel_semanal.jpeg)
+![](/TC/MA-TC-Completo.jpeg)
+![](/TC/MA-Vel_semanal.jpeg)
 
 __Casostotais-MG__
 
-![Casostotais-MG](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/MG-TC-Completo.jpeg)
-![Casostotais-MG](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/MG-Vel_semanal.jpeg)
+![](/TC/MG-TC-Completo.jpeg)
+![](/TC/MG-Vel_semanal.jpeg)
 
 __Casostotais-MS__
 
-![Casostotais-MS](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/MS-TC-Completo.jpeg)
-![Casostotais-MS](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/MS-Vel_semanal.jpeg)
+![](/TC/MS-TC-Completo.jpeg)
+![](/TC/MS-Vel_semanal.jpeg)
 
 __Casostotais-MT__
 
-![Casostotais-MT](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/MT-TC-Completo.jpeg)
-![Casostotais-MT](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/MT-Vel_semanal.jpeg)
+![](/TC/MT-TC-Completo.jpeg)
+![](/TC/MT-Vel_semanal.jpeg)
 
 __Casostotais-PA__
 
-![Casostotais-PA](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PA-TC-Completo.jpeg)
-![Casostotais-PA](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PA-Vel_semanal.jpeg)
+![](/TC/PA-TC-Completo.jpeg)
+![](/TC/PA-Vel_semanal.jpeg)
 
 __Casostotais-PB__
 
-![Casostotais-PB](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PB-TC-Completo.jpeg)
-![Casostotais-PB](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PB-Vel_semanal.jpeg)
+![](/TC/PB-TC-Completo.jpeg)
+![](/TC/PB-Vel_semanal.jpeg)
 
 __Casostotais-PE__
 
-![Casostotais-PE](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PE-TC-Completo.jpeg)
-![Casostotais-PE](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PE-Vel_semanal.jpeg)
+![](/TC/PE-TC-Completo.jpeg)
+![](/TC/PE-Vel_semanal.jpeg)
 
 __Casostotais-PI__
 
-![Casostotais-PI](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PI-TC-Completo.jpeg)
-![Casostotais-PI](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PI-Vel_semanal.jpeg)
+![](/TC/PI-TC-Completo.jpeg)
+![](/TC/PI-Vel_semanal.jpeg)
 
 __Casostotais-PR__
 
-![Casostotais-PR](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PR-TC-Completo.jpeg)
-![Casostotais-PR](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/PR-Vel_semanal.jpeg)
+![](/TC/PR-TC-Completo.jpeg)
+![](/TC/PR-Vel_semanal.jpeg)
 
 __Casostotais-RJ__
 
-![Casostotais-RJ](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RJ-TC-Completo.jpeg)
-![Casostotais-RJ](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RJ-Vel_semanal.jpeg)
+![](/TC/RJ-TC-Completo.jpeg)
+![](/TC/RJ-Vel_semanal.jpeg)
 
 __Casostotais-RN__
 
-![Casostotais-RN](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RN-TC-Completo.jpeg)
-![Casostotais-RN](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RN-Vel_semanal.jpeg)
+![](/TC/RN-TC-Completo.jpeg)
+![](/TC/RN-Vel_semanal.jpeg)
 
 __Casostotais-RO__
 
-![Casostotais-RO](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RO-TC-Completo.jpeg)
-![Casostotais-RO](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RO-Vel_semanal.jpeg)
+![](/TC/RO-TC-Completo.jpeg)
+![](/TC/RO-Vel_semanal.jpeg)
 
 __Casostotais-RR__
 
-![Casostotais-RR](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RR-TC-Completo.jpeg)
-![Casostotais-RR](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RR-Vel_semanal.jpeg)
+![](/TC/RR-TC-Completo.jpeg)
+![](/TC/RR-Vel_semanal.jpeg)
 
 __Casostotais-RS__
 
-![Casostotais-RS](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RS-TC-Completo.jpeg)
-![Casostotais-RS](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/RS-Vel_semanal.jpeg)
+![](/TC/RS-TC-Completo.jpeg)
+![](/TC/RS-Vel_semanal.jpeg)
 
 __Casostotais-SC__
 
-![Casostotais-SC](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/SC-TC-Completo.jpeg)
-![Casostotais-SC](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/SC-Vel_semanal.jpeg)
+![](/TC/SC-TC-Completo.jpeg)
+![](/TC/SC-Vel_semanal.jpeg)
 
 __Casostotais-SE__
 
-![Casostotais-SE](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/SE-TC-Completo.jpeg)
-![Casostotais-SE](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/SE-Vel_semanal.jpeg)
+![](/TC/SE-TC-Completo.jpeg)
+![](/TC/SE-Vel_semanal.jpeg)
 
 __Casostotais-SP__
 
-![Casostotais-SP](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/SP-TC-Completo.jpeg)
-![Casostotais-SP](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/SP-Vel_semanal.jpeg)
+![](/TC/SP-TC-Completo.jpeg)
+![](/TC/SP-Vel_semanal.jpeg)
 
 __Casostotais-TO__
 
-![Casostotais-TO](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/TO-TC-Completo.jpeg)
-![Casostotais-TO](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/TO-Vel_semanal.jpeg)
+![](/TC/TO-TC-Completo.jpeg)
+![](/TC/TO-Vel_semanal.jpeg)
+
 
 
 
