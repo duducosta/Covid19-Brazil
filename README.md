@@ -18,10 +18,10 @@ Nota: Dadas as unidades dos gráficos, os mesmos não se encontram em escala, e 
 Estados em ordem alfabética. \
 Pode ser usado a busca do navegador para facilitar.\
 
-__Casostotais-AC__\
+__Casostotais-AC__
 
-![Casostotais-AC](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC-TC-Completo.jpeg)\
-![Casostotais-AC](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC-Vel_semanal.jpeg)\
+![Casostotais-AC](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC-TC-Completo.jpeg)
+![Casostotais-AC](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC-Vel_semanal.jpeg)
 
 __Casostotais-AL__
 
