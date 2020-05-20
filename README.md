@@ -30,8 +30,8 @@ __Casostotais-AL__
 
 __Casostotais-AM__
 
-![Casostotais-AM](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AM-TC-Completo.jpeg)
-![Casostotais-AM](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AM-Vel_semanal.jpeg)
+![](/TC/AM-TC-Completo.jpeg)
+![](TC/AM-Vel_semanal.jpeg)
 
 __Casostotais-AP__
 
