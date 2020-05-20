@@ -1,4 +1,4 @@
-setwd(file.path("D:","Projects","Data Analysis","Covid19 - Brazil","TC"))
+setwd(file.path("D:","Projects","Data Analysis","Covid19-Brazil","TC"))
 getwd()
 g_width = 800
 g_height = 800
@@ -75,7 +75,7 @@ for(var in unique(df_estados$uf))
   d <- df_temp
   tt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))
   colnames(d) <- c("Estado", "Semana epidem.", "Casos totais", "Aumento de casos da semana", "Média de aumento por dia (/100)", "Velocidade do aumento")
-  jpeg((paste(var,"-Vel_semanal.jpeg",sep="")), width= g_width, height= g_height)
+  jpeg((paste(var,"-Vel_semanal.jpeg",sep="")), width= g_width, height= 300)
   grid.newpage()
   grid.table(d)
   dev.off()  
@@ -165,8 +165,8 @@ remove(var,po, no, p1_data, filteredVector)
         #### PRECISA CALCULAR ###
 
 
-# 2.3 Treemap com última posição de casos totais
-
+# 2.3 Resumos gerais 
+# 2.3.1 Tabelas com casos acumulados por estado, total e percentual
 p2_data <- df_estados[df_estados$datetime==max(df_estados$datetime),]
 p2_data$percentage <- round(p2_data$cases/sum(p2_data$cases)*100,1)
 p2_data$deaths <-NULL
@@ -185,12 +185,25 @@ jpeg("0Brasil-TC-Tabela.jpeg", width= 250, height= 700)
 grid.newpage()
 grid.table(p2_data[,])
 dev.off() 
-remove(p2_data,p3_data,tt)
+remove(p2_data,p3_data,tt,p2_data_temp)
 
-
-
+# 2.3.2 Plotagem de mapa com casos por estado
+jpeg("0Brasil-TC_mapa.jpeg", width= 500, height= 500)
+ggplot(data=shp_data_estados)+
+  geom_map(map=shp_dataframe, 
+           colour="gray",
+           size=0.1, 
+           aes(map_id = CD_GEOCUF, fill = casosAcumulado))+
+  expand_limits(x=shp_dataframe$long,
+                y=shp_dataframe$lat) +
+  scale_fill_gradient(low="lightyellow",
+                      high="darkred")+
+  coord_map()+
+  theme_void()+
+  theme(legend.position = c(0.2,0.3))
+dev.off() 
 
 
 ### FINAL DO ARQUIVO DE TOTAL CASES
-setwd("D:\\Projects\\Data Analysis\\Covid19 - Brazil")
+setwd("D:\\Projects\\Data Analysis\\Covid19-Brazil")
 print("----------------FINAL DO ARQUIVO DE TOTAL CASES------------------")
