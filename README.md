@@ -14,8 +14,9 @@ Ou seja: Quando mais escura a cor das colunas, mais rápido estão se multiplica
 
 Nota: Dadas as unidades dos gráficos, os mesmos não se encontram em escala, e para o cálculo da inclinação da reta tangente foi usado um fator na escala do gráfico para que os resultados sejam mais sensíveis.
 
-## Tabela com resumo atual
+## Gráficos e tabelas com resumos gerais
 ![](/TC/0Brasil-TC-Tabela.jpeg)
+![](/TC/0Brasil-TC_mapa.jpeg)
 
 ## Gráficos no nível dos estados
 Estados em ordem alfabética.  
