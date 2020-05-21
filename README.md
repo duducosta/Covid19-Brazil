@@ -1,5 +1,6 @@
 # Covid19-Brazil
-Scripts em R para análise de dados e geração de gráficos à partir dos dados de https://covid.saude.gov.br/
+Scripts em R para análise de dados e geração de gráficos à partir dos dados de https://covid.saude.gov.br/  
+Este repositório está sob MIT license, a qual pode ser encontrada no mesmo.
 
 # Origem dos dados
 Os dados são retirados do site [https://covid.saude.gov.br/](https://covid.saude.gov.br/), através de arquivo `.csv` disponibilizado diariamente.  
