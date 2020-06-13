@@ -13,7 +13,7 @@ library("gridBase")
 library("gridExtra")
 library("viridis")
 library("rgdal")
-library("fortify")
+#library("fortify")
 Sys.setlocale("LC_TIME", "English")
 conflicts() #Existem conflitos entre funções dos pacotes. Usar "::" para determinar qual namespace usar
 tidyverse_conflicts()
@@ -22,15 +22,15 @@ options(scipen=999)
 # 1 Importação dos dados
 # Arquivo .csv do site: https://covid.saude.gov.br/
 #importação
-MyData <- read.csv("db\\HIST_PAINEL_COVIDBR_20200519.csv", sep = ";")
-colnames(MyData) <- c("regiao","estado","municipio","coduf","codmun","codRegiaoSaude","nomeRegiaoSaude","data","semanaEpi","populacaoTCU2019","casosAcumulado","obitosAcumulado","Recuperadosnovos","emAcompanhamentoNovos")
+MyData <- read.csv("db\\HIST_PAINEL_COVIDBR_20200612.csv", sep = ";")
+colnames(MyData) <- c("regiao","estado","municipio","coduf","codmun","codRegiaoSaude","nomeRegiaoSaude","data","semanaEpi","populacaoTCU2019","casosAcumulado","casosNovos","obitosAcumulado","obitosNovos","Recuperadosnovos","emAcompanhamentoNovos")
 #atribuição de fatores e formatos
 MyData[MyData==""] <- NA
 MyData$regiao <-factor(MyData$regiao)
 MyData$estado <-factor(MyData$estado)
 MyData$municipio <-factor(MyData$municipio)
 MyData$nomeRegiaoSaude <-factor(MyData$nomeRegiaoSaude)
-MyData$data <- as.POSIXct(MyData$data, format="%Y-%m-%d", tz="UTC")
+MyData$data <- as.POSIXct(MyData$data, format="%d/%m/%Y", tz="UTC")
 last_update <- max(MyData$data)
 #Construindo dataframe por estado
 df_temp <- MyData[MyData$regiao !="Brasil" & is.na(MyData$municipio) & is.na(MyData$codmun),]
