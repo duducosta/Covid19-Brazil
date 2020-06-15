@@ -2,5 +2,5 @@
 
 __Casos totais-AC__
 
-![](https://github.com/duducosta/Covid19-Brazil/blob/master/TC/AC-TC-Completo.jpeg)
+![](https://raw.githubusercontent.com/duducosta/Covid19-Brazil/master/TC/AC-TC-Completo.jpeg)
 
