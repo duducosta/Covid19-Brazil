@@ -1,6 +1,6 @@
 # ESTADOS
 
-## Selecionar o estado desejado na lista abaixo
+#### Selecionar o estado desejado na lista abaixo
 
 [Acre](https://duducosta.github.io/Covid19-Brazil/pages/estados/acre/)  
 [Alagoas](https://duducosta.github.io/Covid19-Brazil/pages/estados/alagoas/)  
