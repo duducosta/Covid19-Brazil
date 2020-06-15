@@ -7,7 +7,7 @@ Explicações detalhadas de cada campo podem ser obtidas no mesmo site, assim co
 Arquivos shapefile (geográficos) retirados do site do [IBGE](ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2017/Brasil/BR/)
 
 # Última posição resumida:
-![](https://raw.githubusercontent.com/duducosta/Covid19-Brazil/master/TC/TC/0Brasil-TC_mapa.jpeg)
+![](https://raw.githubusercontent.com/duducosta/Covid19-Brazil/master/TC/0Brasil-TC_mapa.jpeg)
 
 # Gráficos e tabelas
 Estas figuras são feitas a partir dos dados fornecidos pelo ministério da saúde.  
@@ -17,7 +17,7 @@ Ou seja: Quando mais escura a cor das colunas, mais rápido estão se multiplica
 
 Nota: Dadas as unidades dos gráficos, os mesmos não se encontram em escala, e para o cálculo da inclinação da reta tangente foi usado um fator na escala do gráfico para que os resultados sejam mais sensíveis.
 
-[BRASIL](https://duducosta.github.io/Covid19-Brazil/pages/brasil/)
+[BRASIL](https://duducosta.github.io/Covid19-Brazil/pages/brasil/)  
 [ESTADOS](https://duducosta.github.io/Covid19-Brazil/pages/estados/)
 
 
