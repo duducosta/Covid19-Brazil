@@ -22,7 +22,7 @@ options(scipen=999)
 # 1 Importação dos dados
 # Arquivo .csv do site: https://covid.saude.gov.br/
 #importação
-MyData <- read.csv("db\\HIST_PAINEL_COVIDBR_20200612.csv", sep = ";")
+MyData <- read.csv("db\\HIST_PAINEL_COVIDBR_20200614.csv", sep = ";")
 colnames(MyData) <- c("regiao","estado","municipio","coduf","codmun","codRegiaoSaude","nomeRegiaoSaude","data","semanaEpi","populacaoTCU2019","casosAcumulado","casosNovos","obitosAcumulado","obitosNovos","Recuperadosnovos","emAcompanhamentoNovos")
 #atribuição de fatores e formatos
 MyData[MyData==""] <- NA

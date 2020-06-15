@@ -72,10 +72,11 @@ for(var in unique(df_estados$uf))
   df_temp <- as.data.frame(df_temp)
   df_temp$deaths <- NULL
   # imprimir tabela
+  # cada linha usa em média 22~23 pixels de altura
   d <- df_temp
   tt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))
   colnames(d) <- c("Estado", "Semana epidem.", "Casos totais", "Aumento de casos da semana", "Média de aumento por dia (/100)", "Velocidade do aumento")
-  jpeg((paste(var,"-Vel_semanal.jpeg",sep="")), width= g_width, height= 300)
+  jpeg((paste(var,"-Vel_semanal.jpeg",sep="")), width= g_width, height= 400)
   grid.newpage()
   grid.table(d)
   dev.off()  
