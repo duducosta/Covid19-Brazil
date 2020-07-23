@@ -77,7 +77,7 @@ for(var in unique(df_estados$uf))
   d$cases <- format(round(d$cases), nsmall = 0) #formata para x decimais
   d$deltaCases <- format(round(d$deltaCases), nsmall = 0)
   d$avgNewCasesDay <- format(round(d$avgNewCasesDay), nsmall = 0)
-  d$TanAngle <- format(round(d$TanAngle), nsmall = 2)
+  d$TanAngle <- format(round(d$TanAngle, digits = 2), nsmall = 2)
   tt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))
   colnames(d) <- c("Estado", "Semana \nepidem.", "Casos \ntotais", "Aumento \nde casos \nda semana", "Média de \naumento por \ndia (/100)", "Velocidade \ndo aumento")
   jpeg((paste(var,"-Vel_semanal.jpeg",sep="")), width= 450, height= 630)
