@@ -1,8 +1,9 @@
 ## DADOS POR ESTADOS 
 # 0 Preparação do arquivo
 origem <- "https://covid.saude.gov.br/"
-setwd("D:\\Projects\\Data Analysis\\Covid19-Brazil")
+setwd("F:\\4 Data Analysis\\Covid19-Brazil")
 getwd()
+
 library("tidyverse")
 library("ggplot2")
 library("treemap")
@@ -12,8 +13,11 @@ library("grid")
 library("gridBase")
 library("gridExtra")
 library("viridis")
+library("sf")
 library("rgdal")
 #library("fortify")
+
+
 Sys.setlocale("LC_TIME", "English")
 conflicts() #Existem conflitos entre funções dos pacotes. Usar "::" para determinar qual namespace usar
 tidyverse_conflicts()
@@ -22,7 +26,7 @@ options(scipen=999)
 # 1 Importação dos dados
 # Arquivo .csv do site: https://covid.saude.gov.br/
 #importação
-MyData <- read.csv("db\\HIST_PAINEL_COVIDBR_20200614.csv", sep = ";")
+MyData <- read.csv("db\\HIST_PAINEL_COVIDBR_20200722.csv", sep = ";")
 colnames(MyData) <- c("regiao","estado","municipio","coduf","codmun","codRegiaoSaude","nomeRegiaoSaude","data","semanaEpi","populacaoTCU2019","casosAcumulado","casosNovos","obitosAcumulado","obitosNovos","Recuperadosnovos","emAcompanhamentoNovos")
 #atribuição de fatores e formatos
 MyData[MyData==""] <- NA
@@ -60,5 +64,5 @@ shp_data_estados$emAcompanhamentoNovos <- NULL
 shp_data_estados <- rename(shp_data_estados,"CD_GEOCUF" = "coduf") #ggplot precisa que o campo chave tenha o mesmo nome
 
 ### FINAL DO ARQUIVO DE IMPORTAÇÃO
-setwd("D:\\Projects\\Data Analysis\\Covid19-Brazil")
+setwd("F:\\4 Data Analysis\\Covid19-Brazil")
 print("----------------FINAL DO ARQUIVO DE IMPORTAÇÃO------------------")

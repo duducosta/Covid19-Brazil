@@ -1,4 +1,4 @@
-setwd(file.path("D:","Projects","Data Analysis","Covid19-Brazil","TC"))
+setwd(file.path("F:","4 Data Analysis","Covid19-Brazil","TC"))
 getwd()
 g_width = 800
 g_height = 800
@@ -74,9 +74,13 @@ for(var in unique(df_estados$uf))
   # imprimir tabela
   # cada linha usa em média 22~23 pixels de altura
   d <- df_temp
+  d$cases <- format(round(d$cases), nsmall = 0) #formata para x decimais
+  d$deltaCases <- format(round(d$deltaCases), nsmall = 0)
+  d$avgNewCasesDay <- format(round(d$avgNewCasesDay), nsmall = 0)
+  d$TanAngle <- format(round(d$TanAngle), nsmall = 2)
   tt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))
-  colnames(d) <- c("Estado", "Semana epidem.", "Casos totais", "Aumento de casos da semana", "Média de aumento por dia (/100)", "Velocidade do aumento")
-  jpeg((paste(var,"-Vel_semanal.jpeg",sep="")), width= g_width, height= 400)
+  colnames(d) <- c("Estado", "Semana \nepidem.", "Casos \ntotais", "Aumento \nde casos \nda semana", "Média de \naumento por \ndia (/100)", "Velocidade \ndo aumento")
+  jpeg((paste(var,"-Vel_semanal.jpeg",sep="")), width= 450, height= 630)
   grid.newpage()
   grid.table(d)
   dev.off()  
@@ -90,7 +94,7 @@ for(var in unique(df_estados$uf))
   p1 <- ggplot(data=df_estados[df_estados$uf == var,]) + 
     geom_col(aes(x=datetime, y=cases,fill=TanAngle))+
     geom_line(stat= "identity", 
-              aes(x=datetime, y=cases), size=2.5, colour="green")+
+              aes(x=datetime, y=cases), size=1.5, colour="black")+
     labs(title = paste("Casos totais no estado de",var, "por dia" ),
          subtitle = "",
          caption = paste("Origem dos dados:",origem,"\n Atualizado em:", last_update,"   -  Autor: Eduardo Costa - duducosta.github.io/Covid19-Brazil/"),
@@ -206,5 +210,5 @@ dev.off()
 
 
 ### FINAL DO ARQUIVO DE TOTAL CASES
-setwd("D:\\Projects\\Data Analysis\\Covid19-Brazil")
+setwd("F:\\4 Data Analysis\\Covid19-Brazil")
 print("----------------FINAL DO ARQUIVO DE TOTAL CASES------------------")
